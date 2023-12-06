@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-    <meta charset="UTF-8">
-    <title>multipass_cheatsheet-233aafcd-54a9-4786-806b-f9cad9507c50</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!DOCTYPE html>
+    <html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Multipass CheatSheet - 20231205 - BM</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.mathpix.com/fonts/cmu.css"/>
-    <style>
-  html,body {
+        <style>
+          html,body {
     width: 100%;
     height: 100%;
   }
@@ -803,7 +804,7 @@ foreignObject[data-mjx-xml] {
     position: absolute;
     right: 100%;
     white-space: nowrap;
-    width: max-content;;
+    width: max-content;
     display: flex;
     justify-content: flex-end;
     padding-right: 10px;
@@ -1041,131 +1042,143 @@ foreignObject[data-mjx-xml] {
   .page-break {
     display: none !important;
   }</style>
-</head>
-<body>
-  <div id="preview" class="preview scrollEditor">
-    <div id="container-ruller" />
-    <div id="preview-content">
-      <div id="container-ruller"></div><div id="preview-content" class="preview-content-note"><div class="center preview-paragraph-0 preview-line 0 1 2" style="text-align: center" data_line_start="0" data_line_end="2" data_line="0,3" count_line="3"><strong>Multipass CheatSheet - 20231205 - BM</strong></div>
-<table align="center">
-<thead>
-<tr>
-<th>Commande</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>multipass find</code></td>
-<td>Affiche la liste des images disponibles que vous pouvez installer.</td>
-</tr>
-<tr>
-<td><code>multipass launch --name myvm</code></td>
-<td>Crée une nouvelle machine virtuelle avec le nom "myvm".</td>
-</tr>
-<tr>
-<td><code>multipass launch focal --name myvm</code></td>
-<td>Crée une nouvelle machine virtuelle de la version "focal" d'Ubuntu avec le nom "myvm".</td>
-</tr>
-<tr>
-<td><code>multipass shell myvm</code></td>
-<td>Ouvre un shell interactif dans la machine virtuelle "myvm".</td>
-</tr>
-<tr>
-<td><code>multipass exec myvm -- /bin/bash -c "sudo apt update &amp;&amp; sudo apt upgrade"</code></td>
-<td>Exécute une commande à l'intérieur de la machine virtuelle pour mettre à jour les paquets.</td>
-</tr>
-<tr>
-<td><code>multipass stop myvm</code></td>
-<td>Arrête la machine virtuelle "myvm".</td>
-</tr>
-<tr>
-<td><code>multipass start myvm</code></td>
-<td>Démarre la machine virtuelle "myvm".</td>
-</tr>
-<tr>
-<td><code>multipass delete myvm</code></td>
-<td>Supprime la machine virtuelle "myvm".</td>
-</tr>
-<tr>
-<td><code>multipass purge</code></td>
-<td>Supprime définitivement toutes les machines virtuelles supprimées pour libérer de l'espace disque.</td>
-</tr>
-<tr>
-<td><code>multipass list</code></td>
-<td>Affiche la liste des machines virtuelles en cours d'exécution.</td>
-</tr>
-<tr>
-<td><code>multipass launch --cpus 2 --mem 2G --disk 10G</code></td>
-<td>Crée une nouvelle machine virtuelle avec une configuration spécifique en termes de CPU, mémoire et espace disque.</td>
-</tr>
-<tr>
-<td><code>multipass transfer fichier.txt myvm:</code></td>
-<td>Transfère le fichier "fichier.txt" depuis l'hôte vers le répertoire home de la machine virtuelle "myvm".</td>
-</tr>
-<tr>
-<td><code>multipass mount $HOME myvm</code></td>
-<td>Montre le répertoire home de l'hôte dans la machine virtuelle "myvm".</td>
-</tr>
-<tr>
-<td><code>multipass mount /home/sub/dev myvm:/home/ubuntu/dev</code></td>
-<td>Montre le répertoire /home/sub/dev de l'hôte dans /home/ubuntu/dev de la machine virtuelle "myvm".</td>
-</tr>
-<tr>
-<td><code>multipass launch --name myvm --mount /home/sub/codeigniter:/home/ubuntu/codeigniter</code></td>
-<td>Crée une nouvelle machine virtuelle "myvm" et monte le répertoire /home/sub/codeigniter de l'hôte dans /home/ubuntu/codeigniter de la machine virtuelle.</td>
-</tr>
-<tr>
-<td><code>multipass info myvm</code></td>
-<td>Affiche des informations détaillées sur la machine virtuelle "myvm", y compris les points de montage actifs.</td>
-</tr>
-<tr>
-<td><code>multipass help</code></td>
-<td>Affiche des informations d'aide sur l'utilisation de Multipass.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="commandes-suppl%C3%A9mentaires" class="preview-paragraph-25 preview-line 25" data_line_start="25" data_line_end="25" data_line="25,26" count_line="1">Commandes Supplémentaires</h3>
-<table align="center">
-<thead>
-<tr>
-<th>Commande</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>multipass restart myvm</code></td>
-<td>Redémarre la machine virtuelle "myvm".</td>
-</tr>
-<tr>
-<td><code>multipass suspend myvm</code></td>
-<td>Met en pause la machine virtuelle "myvm".</td>
-</tr>
-<tr>
-<td><code>multipass resume myvm</code></td>
-<td>Reprend l'exécution de la machine virtuelle "myvm" depuis la pause.</td>
-</tr>
-<tr>
-<td><code>multipass info --all</code></td>
-<td>Affiche des informations détaillées sur toutes les machines virtuelles, y compris celles arrêtées.</td>
-</tr>
-<tr>
-<td><code>multipass alias add myalias myvm</code></td>
-<td>Crée un alias "myalias" pour la machine virtuelle "myvm".</td>
-</tr>
-<tr>
-<td><code>multipass alias list</code></td>
-<td>Affiche la liste des alias créés pour les machines virtuelles.</td>
-</tr>
-<tr>
-<td><code>multipass shell myalias</code></td>
-<td>Ouvre un shell interactif dans la machine virtuelle "myvm" en utilisant l'alias "myalias".</td>
-</tr>
-</tbody>
-</table>
-</div>
-    </div>
-  </div>
-</body>
-</html>
+    </head>
+    <body>
+        <div id="preview" class="preview scrollEditor">
+            <div id="container-ruler"></div>
+            <div id="preview-content">
+                <div id="container-ruler"></div>
+                <div id="preview-content" class="preview-content-note">
+                    <div class="center preview-paragraph-0 preview-line 0 1 2" style="text-align: center"><strong>Multipass CheatSheet - 20231205 - BM</strong></div>
+                    <table align="center">
+                        <thead>
+                        <tbody>
+                            
+                                <tr>
+                                    <td><code>multipass find</code></td>
+                                    <td>Affiche la liste des images disponibles que vous pouvez installer.</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass launch --name myvm</code></td>
+                                    <td>Crée une nouvelle machine virtuelle avec le nom "myvm".</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass launch focal --name myvm</code></td>
+                                    <td>Crée une nouvelle machine virtuelle de la version "focal" d'Ubuntu avec le nom "myvm".</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass shell myvm</code></td>
+                                    <td>Ouvre un shell interactif dans la machine virtuelle "myvm".</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass exec myvm -- /bin/bash -c "sudo apt update && sudo apt upgrade"</code></td>
+                                    <td>Exécute une commande à l'intérieur de la machine virtuelle pour mettre à jour les paquets.</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass stop myvm</code></td>
+                                    <td>Arrête la machine virtuelle "myvm".</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass start myvm</code></td>
+                                    <td>Démarre la machine virtuelle "myvm".</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass delete myvm</code></td>
+                                    <td>Supprime la machine virtuelle "myvm".</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass purge</code></td>
+                                    <td>Supprime définitivement toutes les machines virtuelles supprimées pour libérer de l'espace disque.</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass list</code></td>
+                                    <td>Affiche la liste des machines virtuelles en cours d'exécution.</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass launch --cpus 2 --mem 2G --disk 10G</code></td>
+                                    <td>Crée une nouvelle machine virtuelle avec une configuration spécifique en termes de CPU, mémoire et espace disque.</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass transfer fichier.txt myvm:</code></td>
+                                    <td>Transfère le fichier "fichier.txt" depuis l'hôte vers le répertoire home de la machine virtuelle "myvm".</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass mount $HOME myvm</code></td>
+                                    <td>Montre le répertoire home de l'hôte dans la machine virtuelle "myvm".</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass mount /home/sub/dev myvm:/home/ubuntu/dev</code></td>
+                                    <td>Montre le répertoire /home/sub/dev de l'hôte dans /home/ubuntu/dev de la machine virtuelle "myvm".</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass launch --name myvm --mount /home/sub/codeigniter:/home/ubuntu/codeigniter</code></td>
+                                    <td>Crée une nouvelle machine virtuelle "myvm" et monte le répertoire /home/sub/codeigniter de l'hôte dans /home/ubuntu/codeigniter de la machine virtuelle.</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass info myvm</code></td>
+                                    <td>Affiche des informations détaillées sur la machine virtuelle "myvm", y compris les points de montage actifs.</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass help</code></td>
+                                    <td>Affiche des informations d'aide sur l'utilisation de Multipass.</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass restart myvm</code></td>
+                                    <td>Redémarre la machine virtuelle "myvm".</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass suspend myvm</code></td>
+                                    <td>Met en pause la machine virtuelle "myvm".</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass resume myvm</code></td>
+                                    <td>Reprend l'exécution de la machine virtuelle "myvm" depuis la pause.</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass info --all</code></td>
+                                    <td>Affiche des informations détaillées sur toutes les machines virtuelles, y compris celles arrêtées.</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass alias add myalias myvm</code></td>
+                                    <td>Crée un alias "myalias" pour la machine virtuelle "myvm".</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass alias list</code></td>
+                                    <td>Affiche la liste des alias créés pour les machines virtuelles.</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><code>multipass shell myalias</code></td>
+                                    <td>Ouvre un shell interactif dans la machine virtuelle "myvm" en utilisant l'alias "myalias".</td>
+                                </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
+    

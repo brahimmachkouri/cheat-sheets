@@ -1134,6 +1134,5 @@ if __name__ == "__main__":
 
     # Exécuter le reste du code avec le chemin du fichier
     title, commands = process_markdown_file(file_path)
-    print(title, commands)
     generate_html(title, commands)
 

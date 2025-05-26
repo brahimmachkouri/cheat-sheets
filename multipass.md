@@ -16,6 +16,7 @@
 | `multipass transfer fichier.txt myvm:` | Transfère le fichier "fichier.txt" depuis l'hôte vers le répertoire home de la machine virtuelle "myvm". |
 | `multipass mount $HOME myvm` | Montre le répertoire home de l'hôte dans la machine virtuelle "myvm". |
 | `multipass mount /home/sub/dev myvm:/home/ubuntu/dev` | Montre le répertoire /home/sub/dev de l'hôte dans /home/ubuntu/dev de la machine virtuelle "myvm". |
+| `multipass umount myvm` | Démonte tous les répertoires montés dans la machine virtuelle "myvm". |
 | `multipass launch --name myvm --mount /home/sub/codeigniter:/home/ubuntu/codeigniter` | Crée une nouvelle machine virtuelle "myvm" et monte le répertoire /home/sub/codeigniter de l'hôte dans /home/ubuntu/codeigniter de la machine virtuelle. |
 | `multipass info myvm` | Affiche des informations détaillées sur la machine virtuelle "myvm", y compris les points de montage actifs. |
 | `multipass help` | Affiche des informations d'aide sur l'utilisation de Multipass. |

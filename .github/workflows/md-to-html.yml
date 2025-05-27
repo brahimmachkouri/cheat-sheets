@@ -1,0 +1,32 @@
+name: Convert Markdown to HTML and Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ] # Déclenche l'action à chaque push sur la branche main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install pandoc
+        run: sudo apt-get update && sudo apt-get install -y pandoc
+
+      - name: Convert all Markdown to HTML
+        run: |
+          mkdir -p docs # Crée le répertoire docs s'il n'existe pas
+          for md_file in *.md; do
+            filename=$(basename "$md_file" .md)
+            pandoc "$md_file" -o "docs/${filename}.html" --standalone
+          done
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs # Indique à l'action de publier le contenu du dossier docs
+          publish_branch: gh-pages # Publie sur la branche gh-pages
+          force_orphan: true # Crée une branche gh-pages orpheline si elle n'existe pas, et supprime l'historique précédent

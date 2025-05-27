@@ -861,7 +861,7 @@ foreignObject[data-mjx-xml] {
     visibility: visible;
     word-break: break-word;
     padding: 2.5em;
-    max-width: 800px;
+    /*max-width: 800px;*/
     margin: auto;
     box-sizing: content-box;
   }
@@ -1080,7 +1080,34 @@ foreignObject[data-mjx-xml] {
 }
   .page-break {
     display: none !important;
-  }</style>
+  }
+  
+  .cheatsheet-table td:first-child, .cheatsheet-table th:first-child {
+    white-space: nowrap;         /* Pas de retour à la ligne automatique */
+    max-width: 1px;              /* Laisse la colonne prendre toute la place nécessaire */
+    overflow-x: auto;            /* Ajoute une barre de scroll si la commande est trop longue */
+    font-family: monospace;      /* Pour l’aspect commande */
+    background: #f5f5f5;
+}
+.cheatsheet-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.cheatsheet-table td, .cheatsheet-table th {
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+}
+
+.commands-cell {
+  white-space: nowrap;         /* Pas de retour à la ligne automatique */
+  /*
+  max-width: 1px;              /* Laisse la colonne prendre toute la place nécessaire */
+  overflow-x: auto;            /* Ajoute une barre de scroll si la commande est trop longue */
+  font-family: monospace;      /* Pour l’aspect commande */
+  */
+}
+  
+  </style>
     </head>
     <body>
         <div id="preview" class="preview scrollEditor">
@@ -1094,7 +1121,7 @@ foreignObject[data-mjx-xml] {
                         <tbody>
                             {% for cmd in commands %}
                                 <tr>
-                                    <td><code>{{ cmd['commande'] }}</code></td>
+                                    <td class="commands-cell"><code>{{ cmd['commande'] }}</code></td>
                                     <td>{{ cmd['description'] }}</td>
                                 </tr>
                             {% endfor %}
@@ -1135,4 +1162,4 @@ if __name__ == "__main__":
     # Exécuter le reste du code avec le chemin du fichier
     title, commands = process_markdown_file(file_path)
     generate_html(title, commands)
-
+    

@@ -5,9 +5,14 @@ on:
     branches: [ main ] # Déclenche l'action à chaque push sur la branche main
 
 jobs:
+  
   build-and-deploy:
+    
+    permissions:
+      contents: write
+    
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3

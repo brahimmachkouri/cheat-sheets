@@ -35,3 +35,4 @@ jobs:
           publish_dir: ./docs # Indique à l'action de publier le contenu du dossier docs
           publish_branch: gh-pages # Publie sur la branche gh-pages
           force_orphan: true # Crée une branche gh-pages orpheline si elle n'existe pas, et supprime l'historique précédent
+          jekyll_build: false # indique à l'action peaceiris/actions-gh-pages de ne pas tenter de construire un site Jekyll à partir du contenu du répertoire publish_dir

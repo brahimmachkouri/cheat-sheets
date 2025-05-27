@@ -17,12 +17,13 @@ jobs:
 
       - name: Convert Markdown to HTML
         run: |
-          pandoc multipass.md -o multipass.html --standalone
+          mkdir -p docs
+          pandoc multipass.md -o docs/multipass.html --standalone
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          publish_branch: gh-pages
-          force_orphan: true
+      - name: Commit HTML to docs/
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/multipass.html
+          git commit -m "Auto-generate HTML from Markdown [ci skip]" || echo "Nothing to commit"
+          git push

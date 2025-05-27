@@ -29,34 +29,34 @@
 | `multipass alias list` | Affiche la liste des alias créés pour les machines virtuelles. |
 | `multipass shell myalias` | Ouvre un shell interactif dans la machine virtuelle "myvm" en utilisant l'alias "myalias". |
 
-## Gestion des images et versions
+### Gestion des images et versions
 
 | Commande | Description |
 | --- | --- |
 | `multipass find --show-unsupported` | Affiche toutes les images disponibles, y compris celles non officiellement supportées |
 | `multipass launch lts --name myvm` | Lance la dernière version LTS d'Ubuntu |
 
-## Configuration réseau
+### Configuration réseau
 
 | Commande | Description |
 | --- | --- |
 | `multipass launch --name myvm --network name=bridge0` | Crée une VM avec une interface réseau bridgée |
 | `multipass get local.driver` | Affiche le driver de virtualisation utilisé |
 
-## Gestion des snapshots
+### Gestion des snapshots
 
 | Commande | Description |
 | --- | --- |
 | `multipass snapshot myvm` | Crée un snapshot de la VM |
 | `multipass restore myvm.snapshot1` | Restaure un snapshot |
 
-## Cloud-init et personnalisation
+### Cloud-init et personnalisation
 
 | Commande | Description |
 | --- | --- |
 | `multipass launch --name myvm --cloud-init cloud-config.yaml` | Lance une VM avec une configuration cloud-init personnalisée |
 
-## Gestion globale
+### Gestion globale
 
 | Commande | Description |
 | --- | --- |
@@ -64,14 +64,14 @@
 | `multipass get --keys` | Affiche toutes les clés de configuration disponibles |
 | `multipass authenticate` | Authentification pour certaines fonctionnalités |
 
-## Transfert de fichiers (variantes)
+### Transfert de fichiers (variantes)
 
 | Commande | Description |
 | --- | --- |
 | `multipass transfer myvm:fichier.txt .` | Transfère un fichier depuis la VM vers l'hôte |
 | `multipass transfer --parents dossier/ myvm:` | Transfère un dossier en préservant la structure |
 
-## Démontage
+### Démontage
 
 | Commande | Description |
 | --- | --- |

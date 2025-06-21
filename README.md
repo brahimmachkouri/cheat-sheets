@@ -3,3 +3,5 @@
 You'll find here some cheat sheets in english or in french.
 
 [Multipass cheat sheet](https://github.com/brahimmachkouri/cheat-sheets/blob/main/multipass.md#multipass-cheatsheet---20250526---bm)
+
+[Lima cheat sheet](https://brahimmachkouri.github.io/cheat-sheets/lima.html)

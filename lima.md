@@ -1,11 +1,23 @@
 # 🐧 Lima – Ubuntu Cheat Sheet
 
----
+![lima](https://raw.githubusercontent.com/brahimmachkouri/theblog/main/assets/images/lima2.png)
 
-## 📦 Lister les templates disponibles
+Lima (“**Li**nux virtual **ma**chines”) est un outil open-source qui permet de lancer facilement des machines virtuelles Linux sur macOS (et aussi Linux). Il vise à offrir une expérience “Linux-on-Mac” fluide pour les développeurs, tout en gardant une gestion simple et intégrée.
+
+L'objectif est d’exécuter des outils Linux (Docker, Podman, Kubernetes, etc.) sur Mac dans un vrai environnement Linux, ce qui offre une compatibilité et un comportement identiques à un vrai serveur Linux.
+
+## Installation
 
 ```bash
-limactl start --list-templates
+brew install lima
+```
+
+## 📦 Lister les templates Ubuntu disponibles
+
+Il existe de nombreux templates disponibles (docker, podman, kubernetes, ubuntu, debian, fedora, opensuse, alpine, etc), mais ici, c'est Ubuntu qui nous intéresse :
+
+```bash
+limactl start --list-templates | grep ubuntu
 ```
 
 ✅ Affiche les templates Ubuntu disponibles localement.
@@ -92,17 +104,17 @@ limactl delete       # Supprimer une VM (demande confirmation)
 
 ## 📂 Copier des fichiers entre hôte (Mac) et VM
 
+```bash
+lima cp <source> <destination>
+```
+
 ### Depuis le Mac vers la VM
 ```bash
-limactl cp  :
-# Exemple: Copier un fichier vers le répertoire home de l'utilisateur dans la VM
 limactl cp ./mon_fichier.txt ubuntu24:~/
 ```
 
 ### Depuis la VM vers le Mac
 ```bash
-limactl cp : 
-# Exemple: Copier un fichier de la VM vers le répertoire courant
 limactl cp ubuntu24:~/rapport.pdf ./
 ```
 

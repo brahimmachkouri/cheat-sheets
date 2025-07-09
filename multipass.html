@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>multipass</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h2 id="multipass-cheatsheet---20250527-1200---bm">Multipass CheatSheet
+- 20250527-1200 - BM</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>multipass find</code></td>
+<td>Affiche la liste des images disponibles que vous pouvez
+installer.</td>
+</tr>
+<tr class="even">
+<td><code>multipass launch --name myvm</code></td>
+<td>Crée une nouvelle machine virtuelle avec le nom “myvm”.</td>
+</tr>
+<tr class="odd">
+<td><code>multipass launch focal --name myvm</code></td>
+<td>Crée une nouvelle machine virtuelle de la version “focal” d’Ubuntu
+avec le nom “myvm”.</td>
+</tr>
+<tr class="even">
+<td><code>multipass shell myvm</code></td>
+<td>Ouvre un shell interactif dans la machine virtuelle “myvm”.</td>
+</tr>
+<tr class="odd">
+<td><code>multipass exec myvm -- /bin/bash -c "sudo apt update &amp;&amp; sudo apt upgrade"</code></td>
+<td>Exécute une commande à l’intérieur de la machine virtuelle pour
+mettre à jour les paquets.</td>
+</tr>
+<tr class="even">
+<td><code>multipass stop myvm</code></td>
+<td>Arrête la machine virtuelle “myvm”.</td>
+</tr>
+<tr class="odd">
+<td><code>multipass start myvm</code></td>
+<td>Démarre la machine virtuelle “myvm”.</td>
+</tr>
+<tr class="even">
+<td><code>multipass delete myvm</code></td>
+<td>Supprime la machine virtuelle “myvm”.</td>
+</tr>
+<tr class="odd">
+<td><code>multipass purge</code></td>
+<td>Supprime définitivement toutes les machines virtuelles supprimées
+pour libérer de l’espace disque.</td>
+</tr>
+<tr class="even">
+<td><code>multipass list</code></td>
+<td>Affiche la liste des machines virtuelles en cours d’exécution.</td>
+</tr>
+<tr class="odd">
+<td><code>multipass launch --cpus 2 --mem 2G --disk 10G</code></td>
+<td>Crée une nouvelle machine virtuelle avec une configuration
+spécifique en termes de CPU, mémoire et espace disque.</td>
+</tr>
+<tr class="even">
+<td><code>multipass transfer fichier.txt myvm:</code></td>
+<td>Transfère le fichier “fichier.txt” depuis l’hôte vers le répertoire
+home de la machine virtuelle “myvm”.</td>
+</tr>
+<tr class="odd">
+<td><code>multipass mount $HOME myvm</code></td>
+<td>Montre le répertoire home de l’hôte dans la machine virtuelle
+“myvm”.</td>
+</tr>
+<tr class="even">
+<td><code>multipass mount /home/sub/dev myvm:/home/ubuntu/dev</code></td>
+<td>Montre le répertoire /home/sub/dev de l’hôte dans /home/ubuntu/dev
+de la machine virtuelle “myvm”.</td>
+</tr>
+<tr class="odd">
+<td><code>multipass umount myvm</code></td>
+<td>Démonte tous les répertoires montés dans la machine virtuelle
+“myvm”.</td>
+</tr>
+<tr class="even">
+<td><code>multipass launch --name myvm --mount /home/sub/codeigniter:/home/ubuntu/codeigniter</code></td>
+<td>Crée une nouvelle machine virtuelle “myvm” et monte le répertoire
+/home/sub/codeigniter de l’hôte dans /home/ubuntu/codeigniter de la
+machine virtuelle.</td>
+</tr>
+<tr class="odd">
+<td><code>multipass info myvm</code></td>
+<td>Affiche des informations détaillées sur la machine virtuelle “myvm”,
+y compris les points de montage actifs.</td>
+</tr>
+<tr class="even">
+<td><code>multipass help</code></td>
+<td>Affiche des informations d’aide sur l’utilisation de Multipass.</td>
+</tr>
+<tr class="odd">
+<td><code>multipass version</code></td>
+<td>Affiche la version de Multipass.</td>
+</tr>
+<tr class="even">
+<td><code>multipass restart myvm</code></td>
+<td>Redémarre la machine virtuelle “myvm”.</td>
+</tr>
+<tr class="odd">
+<td><code>multipass suspend myvm</code></td>
+<td>Met en pause la machine virtuelle “myvm”.</td>
+</tr>
+<tr class="even">
+<td><code>multipass resume myvm</code></td>
+<td>Reprend l’exécution de la machine virtuelle “myvm” depuis la
+pause.</td>
+</tr>
+<tr class="odd">
+<td><code>multipass info --all</code></td>
+<td>Affiche des informations détaillées sur toutes les machines
+virtuelles, y compris celles arrêtées.</td>
+</tr>
+<tr class="even">
+<td><code>multipass alias add myalias myvm</code></td>
+<td>Crée un alias “myalias” pour la machine virtuelle “myvm”.</td>
+</tr>
+<tr class="odd">
+<td><code>multipass alias list</code></td>
+<td>Affiche la liste des alias créés pour les machines virtuelles.</td>
+</tr>
+<tr class="even">
+<td><code>multipass shell myalias</code></td>
+<td>Ouvre un shell interactif dans la machine virtuelle “myvm” en
+utilisant l’alias “myalias”.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gestion-des-images-et-versions">Gestion des images et
+versions</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>multipass find --show-unsupported</code></td>
+<td>Affiche toutes les images disponibles, y compris celles non
+officiellement supportées</td>
+</tr>
+<tr class="even">
+<td><code>multipass launch lts --name myvm</code></td>
+<td>Lance la dernière version LTS d’Ubuntu</td>
+</tr>
+</tbody>
+</table>
+<h3 id="configuration-réseau">Configuration réseau</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>multipass launch --name myvm --network name=bridge0</code></td>
+<td>Crée une VM avec une interface réseau bridgée</td>
+</tr>
+<tr class="even">
+<td><code>multipass get local.driver</code></td>
+<td>Affiche le driver de virtualisation utilisé</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gestion-des-snapshots">Gestion des snapshots</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>multipass snapshot myvm</code></td>
+<td>Crée un snapshot de la VM</td>
+</tr>
+<tr class="even">
+<td><code>multipass restore myvm.snapshot1</code></td>
+<td>Restaure un snapshot</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cloud-init-et-personnalisation">Cloud-init et
+personnalisation</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>multipass launch --name myvm --cloud-init cloud-config.yaml</code></td>
+<td>Lance une VM avec une configuration cloud-init personnalisée</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gestion-globale">Gestion globale</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>multipass set local.driver=hyperkit</code></td>
+<td>Change le driver de virtualisation (sur macOS)</td>
+</tr>
+<tr class="even">
+<td><code>multipass get --keys</code></td>
+<td>Affiche toutes les clés de configuration disponibles</td>
+</tr>
+<tr class="odd">
+<td><code>multipass authenticate</code></td>
+<td>Authentification pour certaines fonctionnalités</td>
+</tr>
+</tbody>
+</table>
+<h3 id="transfert-de-fichiers-variantes">Transfert de fichiers
+(variantes)</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>multipass transfer myvm:fichier.txt .</code></td>
+<td>Transfère un fichier depuis la VM vers l’hôte</td>
+</tr>
+<tr class="even">
+<td><code>multipass transfer --parents dossier/ myvm:</code></td>
+<td>Transfère un dossier en préservant la structure</td>
+</tr>
+</tbody>
+</table>
+<h3 id="démontage">Démontage</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>multipass unmount myvm</code></td>
+<td>Démonte tous les points de montage d’une VM</td>
+</tr>
+<tr class="even">
+<td><code>multipass unmount myvm:/path/to/mount</code></td>
+<td>Démonte un point de montage spécifique</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
